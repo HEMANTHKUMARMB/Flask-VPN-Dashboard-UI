@@ -51,3 +51,4 @@ On the login page (`/login`), use:
 - **Password**: `securepass`
 
 After logging in you will be redirected to the dashboard with a simulated secure session.
+
