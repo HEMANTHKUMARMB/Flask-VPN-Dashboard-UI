@@ -52,7 +52,9 @@ On the login page (`/login`), use:
 
 After logging in you will be redirected to the dashboard with a simulated secure session.
 
- Acknowledgements
+-----------------------------------------------------------------------------------------------------------------------------
+ # Acknowledgements
 
 Special thanks to [Ayush S](https://github.com/ayush007-lio) for guidance and support.
+
 
