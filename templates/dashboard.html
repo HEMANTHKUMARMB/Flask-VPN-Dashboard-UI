@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | AI VPN Secure Cloud Access</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+<div class="page">
+    <header class="navbar">
+        <div class="logo">AI VPN<span>Secure Cloud</span></div>
+        <nav class="nav-links">
+            <a href="{{ url_for('index') }}">Home</a>
+        </nav>
+        <div class="nav-actions">
+            <a href="{{ url_for('logout') }}" class="btn btn-ghost">Logout</a>
+        </div>
+    </header>
+
+    <main class="section">
+        <h1>Secure Access Dashboard</h1>
+        <p class="dashboard-subtitle">Welcome, <strong>{{ user }}</strong>. Your AI-guarded tunnel is active for this demo session.</p>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-container">
+                    {% for category, message in messages %}
+                        <div class="flash flash-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <div class="grid">
+            <div class="card">
+                <h2>Session Status</h2>
+                <ul>
+                    <li>Mode: Free Cloud Secure Access (demo)</li>
+                    <li>Encryption: Simulated AES-256</li>
+                    <li>Region: Auto-selected edge POP</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>Cloud Endpoints (Demo)</h2>
+                <ul>
+                    <li>dev-k8s.internal</li>
+                    <li>staging-db.cluster.local</li>
+                    <li>analytics-lake.cloud</li>
+                </ul>
+                <p class="card-note">All endpoints and traffic are simulated in this UI.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span>Demo dashboard only. Replace with real VPN logic for production use.</span>
+    </footer>
+</div>
+</body>
+</html>
